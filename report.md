@@ -1,5 +1,5 @@
 ## 1. Key learning, skills and experience acquired
-1. 123452352342345234
+1. 12312
 2. 123
 
 ## 2. Problem / Confusing / Difficulties
