@@ -19,16 +19,16 @@ def post(token, cookies):
     json_data = {
         "format": "json",
         "message": {
-            "rich_content": ' @Corporate.ISD.ZHA.ISDC_ZHA_IT_Academy.2018_Class @%s @%s ' % (
-                tibbr_config['leader'], tibbr_config['tutor']) + build_weekly_report(calculate_week_and_date(),
+            "rich_content": ' @Corporate.ISD.ZHA.ISDC_ZHA_IT_Academy.2018_Class @%s @%s @%s ' % (
+                tibbr_config['leader'], tibbr_config['tutor'], tibbr_config['teacher']) + build_weekly_report(calculate_week_and_date(),
                                                                                      build_report_with_md()),
             "temp_files": "",
             "private_message": "true",
             "msg_type": "plain"
         },
         "tibbr-subject_name": "",
-        "subject_name": ",Corporate.ISD.ZHA.ISDC_ZHA_IT_Academy.2018_Class,%s,%s" % (
-            tibbr_config['leader'], tibbr_config['tutor']),
+        "subject_name": ",Corporate.ISD.ZHA.ISDC_ZHA_IT_Academy.2018_Class,%s,%s,%s" % (
+            tibbr_config['leader'], tibbr_config['tutor'], tibbr_config['teacher']),
         "allow_subject_announcement": "false",
         "authenticity_token": token,
         "access_token": "undefined"
