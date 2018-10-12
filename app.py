@@ -1,7 +1,6 @@
 import datetime
-from config import tibbr_config
-
 import requests
+from config import tibbr_config
 
 
 
