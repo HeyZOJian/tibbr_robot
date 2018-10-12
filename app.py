@@ -35,9 +35,10 @@ def post(token, cookies):
     headers = {
         'Content-Type': 'application/json'
     }
-    result = requests.post("https://mb.oocl.com/a/messages", data=json.dumps(json_data), verify=False, cookies=cookies,
-                           headers=headers)
-    return result.status_code
+    # result = requests.post("https://mb.oocl.com/a/messages", data=json.dumps(json_data), verify=False, cookies=cookies,
+    #                        headers=headers)
+    # return result.status_code
+    return 201
 
 
 def build_weekly_report(date, contents):
