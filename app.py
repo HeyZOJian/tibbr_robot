@@ -1,7 +1,8 @@
 import datetime
+import json
+
 import requests
 from config import tibbr_config
-
 
 
 def login():
@@ -35,10 +36,9 @@ def post(token, cookies):
     headers = {
         'Content-Type': 'application/json'
     }
-    # result = requests.post("https://mb.oocl.com/a/messages", data=json.dumps(json_data), verify=False, cookies=cookies,
-    #                        headers=headers)
-    # return result.status_code
-    return 201
+    result = requests.post("https://mb.oocl.com/a/messages", data=json.dumps(json_data), verify=False, cookies=cookies,
+                           headers=headers)
+    return result.status_code
 
 
 def build_weekly_report(date, contents):
@@ -78,7 +78,7 @@ def get_content_from_each_subtitle(content, index):
 def calculate_week_and_date():
     today = datetime.datetime.now()
     days_of_week = int(today.strftime("%w"))
-    from_date = (today + datetime.timedelta(days=-days_of_week+1))
+    from_date = (today + datetime.timedelta(days=-days_of_week + 1))
     to_date = (from_date + datetime.timedelta(days=4))
     return [today.strftime("%W"), from_date.strftime("%Y/%m/%d"), to_date.strftime("%Y/%m/%d")]
 
@@ -86,6 +86,14 @@ def calculate_week_and_date():
 if __name__ == "__main__":
     token, cookies = login()
     if post(token, cookies) == 201:
-        print("post success!")
+        print("""
+            *******************
+            *  post success!  *
+            *******************
+        """)
     else:
-        print("post error!")
+        print("""
+            *****************
+            *  post faild!  *
+            *****************
+        """)
